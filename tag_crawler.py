@@ -1,5 +1,4 @@
 import requests
-import sys
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import os
@@ -237,7 +236,7 @@ def crawl_website(base_url, max_pages=100, max_depth=5, delay=1):
 
 def create_output_directory(base_url):
     """
-    Creates an output directory named after the main domain in the same directory as the script or executable.
+    Creates an output directory named after the main domain in the user's Documents folder.
 
     Args:
         base_url (str): The main domain URL.
@@ -245,22 +244,21 @@ def create_output_directory(base_url):
     Returns:
         str: The path to the created directory.
     """
-    if getattr(sys, 'frozen', False):
-        # If the application is run as a bundle, the PyInstaller bootloader
-        # extends the sys module by a flag frozen=True and sets the app 
-        # path into variable _MEIPASS'.
-        script_dir = sys._MEIPASS
-    else:
-        # Normal Python script
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-    
+    # Get the user's home directory
+    home_dir = os.path.expanduser("~")
+    # Define the Documents directory path
+    documents_dir = os.path.join(home_dir, "Documents")
+    # Check if Documents directory exists, if not, use home directory
+    if not os.path.exists(documents_dir):
+        documents_dir = home_dir
+    # Parse the base URL to get the domain name
     parsed_url = urlparse(base_url)
     domain_name = parsed_url.netloc
     # Remove 'www.' prefix for a cleaner directory name
     if domain_name.startswith('www.'):
         domain_name = domain_name[4:]
-    # Define the directory path in the same directory as the script/executable
-    directory_path = os.path.join(script_dir, domain_name)
+    # Define the directory path inside Documents
+    directory_path = os.path.join(documents_dir, domain_name)
     # Create the directory if it does not exist
     os.makedirs(directory_path, exist_ok=True)
     return directory_path
@@ -276,7 +274,7 @@ def generate_combined_html(output_path, page_structures):
     with open(output_path, 'w', encoding='utf-8') as f:
         # Write the beginning of the HTML document
         f.write("<!DOCTYPE html>\n")
-        f.write("<html lang=\"de\">\n")  # Set language to German
+        f.write("<html lang=\"en\">\n")  # Set language to English
         f.write("<head>\n")
         f.write("<meta charset=\"UTF-8\">\n")
         f.write("<title>Heading Structures</title>\n")
@@ -496,7 +494,7 @@ def main():
         print("Invalid URL. Please include the scheme (e.g., 'https://').")
         return
 
-    # Create the output directory in the same directory as the script
+    # Create the output directory in the user's Documents folder
     output_directory = create_output_directory(base_url)
     combined_html_path = os.path.join(output_directory, "heading_structures.html")
     print(f"\nThe heading structures will be saved in '{combined_html_path}'.\n")
