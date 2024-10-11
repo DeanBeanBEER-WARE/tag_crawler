@@ -231,7 +231,7 @@ def main():
     extracts their headings structure, and writes each structure to separate text files
     within a dedicated directory named after the main domain.
     """
-    base_url = input("Enter the main domain URL (e.g., https://example.com): ").strip()
+    base_url = input("Enter the main domain URL: ").strip()
     
     # Validate the URL
     parsed_base = urlparse(base_url)
