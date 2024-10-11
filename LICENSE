@@ -1,9 +1,8 @@
-W       W  eeeee  bbbbb   fffff  l       oooo   w       w
-W   W   W  e      b    b  f      l      o    o  w   w   w
-W  W W  W  eeee   bbbbb   fff    l      o    o  w  W W  w
-W W   W W  e      b    b  f      l      o    o  w W   W w
-W       W  eeeee  bbbbb   f      lllll   oooo   w       w
-
+TTTTTTT  oooo   oooo   l       bbbbb   oooo   x   x
+   T    o    o o    o  l      b    b o    o   x x
+   T    o    o o    o  l      bbbbb  o    o    x
+   T    o    o o    o  l      b    b o    o   x x
+   T     oooo   oooo   lllll  bbbbb   oooo   x   x
 
 * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE":
