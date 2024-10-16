@@ -39,11 +39,48 @@ HeadingCrawler relies on several Python libraries. You can install them using `p
 
 ```bash
 pip install -r requirements.txt
-pip install requests beautifulsoup4 certifi 
+```
 
+Alternatively, install the dependencies individually:
+
+```bash
+pip install requests beautifulsoup4 certifi 
+```
+
+## Cloning the Repository
+
+Clone this repository to your local machine using Git:
+
+```bash
 git clone https://github.com/yourusername/headingcrawler.git
 cd headingcrawler
 ```
+
+## Usage
+
+- **Run the Script:**
+
+Execute the Python script from the command line:
+
+```bash
+python heading_crawler.py
+```
+
+- **Input the Base URL:**
+
+When prompted, enter the main domain URL you wish to analyze:
+
+```bash
+Enter the main domain URL (e.g., https://example.com):
+```
+
+- **Wait for Crawling and Analysis:**
+
+The script will start crawling the website, extracting headings from each internal page. Progress and any errors will be displayed in the console.
+
+- **View the Report:**
+
+Once completed, the script generates a `heading_structures.html` file in a directory named after the website's domain within your Documents folder. Open this HTML file in your web browser to view the interactive report.
 
 ## Typical Use Cases
 
