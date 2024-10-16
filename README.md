@@ -37,11 +37,13 @@ While building or auditing a website, especially for SEO purposes, it's crucial 
 
 HeadingCrawler relies on several Python libraries. You can install them using `pip`:
 
+```bash
 pip install -r requirements.txt
 pip install requests beautifulsoup4 certifi 
 
 git clone https://github.com/yourusername/headingcrawler.git
 cd headingcrawler
+```
 
 ## Typical Use Cases
 
