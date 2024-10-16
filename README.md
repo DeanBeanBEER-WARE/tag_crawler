@@ -78,4 +78,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or feedback, please open an issue on the [GitHub repository](https://github.com/yourusername/headingcrawler) or contact me at [denniswiebler@gmail.com](mailto:denniswiebler@gmail.com).
+For any inquiries or feedback, please open an issue on the [GitHub repository](https://github.com/DeanBeanBEER-WARE/tag_crawler?tab=readme-ov-file) or contact me at [denniswiebler@gmail.com](mailto:denniswiebler@gmail.com).
